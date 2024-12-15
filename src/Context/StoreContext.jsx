@@ -6,7 +6,8 @@ export const StoreContext = createContext(null);
 const StoreContextProvider = (props) => {
 
     // const url = "http://localhost:4000"
-    const url = "https://fooddelbackend.up.railway.app"
+    // const url = "https://fooddelbackend.up.railway.app"
+    const url = "https://d9543e65-8ee4-4e53-9b4a-808fdfa65bd7.e1-us-east-azure.choreoapps.dev"
     // const url = "https://fooddel-backend-pf0z.onrender.com"
     const [food_list, setFoodList] = useState([]);
     const [cartItems, setCartItems] = useState({});

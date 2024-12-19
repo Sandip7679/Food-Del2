@@ -30,7 +30,7 @@
 .food-item-image{
    width: 100%;
    border-radius: 15px 15px 0px 0px;
-   max-height: 200px;
+   height: 200px;
 }
 .food-item-counter{
     position: absolute;

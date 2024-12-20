@@ -99,3 +99,8 @@
     font-weight: 500;
     cursor: pointer;
 }
+.price-order-section button:hover{
+    background-color: rgb(212, 138, 26);
+    opacity: 0.8;
+    /* color: black; */
+}

@@ -57,6 +57,7 @@ const FoodItem = ({ image, name, price, desc, id }) => {
             onClick={() => {
               addToCart(id);
               navigate("/cart");
+              window.scrollTo(0,0);
               setMenu("");
             }}
           >

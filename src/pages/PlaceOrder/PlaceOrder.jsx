@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import axios from 'axios';
 
-const PlaceOrder = () => {
+const PlaceOrder = ({setShowLogin}) => {
 
     const [payment, setPayment] = useState("cod")
     const [data, setData] = useState({
@@ -73,6 +73,7 @@ const PlaceOrder = () => {
     useEffect(() => {
         if (!token) {
             toast.error("to place an order sign in first")
+            setShowLogin(true);
             navigate('/cart')
         }
         else if (getTotalCartAmount() === 0) {

@@ -2,10 +2,12 @@ import React, { useContext, useState } from "react";
 import "./FoodItem.css";
 import { assets } from "../../assets/assets";
 import { StoreContext } from "../../Context/StoreContext";
+import { useNavigate } from "react-router-dom";
 
 const FoodItem = ({ image, name, price, desc, id }) => {
+  const navigate = useNavigate();
   const [itemCount, setItemCount] = useState(0);
-  const { cartItems, addToCart, removeFromCart, url, currency } =
+  const { cartItems, addToCart, removeFromCart, url, currency,setMenu } =
     useContext(StoreContext);
 
   return (
@@ -22,6 +24,7 @@ const FoodItem = ({ image, name, price, desc, id }) => {
             onClick={() => addToCart(id)}
             src={assets.add_icon_white}
             alt=""
+            title="Add to cart"
           />
         ) : (
           <div className="food-item-counter">
@@ -45,10 +48,21 @@ const FoodItem = ({ image, name, price, desc, id }) => {
           <p>{name}</p>
         </div>
         <p className="food-item-desc">{desc}</p>
-        <p className="food-item-price">
-          {currency}
-          {price}
-        </p>
+        <div className="price-order-section">
+          <p className="food-item-price">
+            {currency}
+            {price}
+          </p>
+          <button
+            onClick={() => {
+              addToCart(id);
+              navigate("/cart");
+              setMenu("");
+            }}
+          >
+            Order Now
+          </button>
+        </div>
       </div>
     </div>
   );

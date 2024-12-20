@@ -12,3 +12,11 @@
     gap: 30px;
     row-gap: 50px;
 }
+.top-dishes{
+    display: flex;
+    justify-content: space-between;
+}
+.view-all{
+ text-decoration: underline;
+ cursor: pointer;
+}

@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 const FoodItem = ({ image, name, price, desc, id }) => {
   const navigate = useNavigate();
   const [itemCount, setItemCount] = useState(0);
-  const { cartItems, addToCart, removeFromCart, url, currency,setMenu } =
+  const { cartItems, addToCart, removeFromCart, url, currency, setMenu } =
     useContext(StoreContext);
 
   return (
@@ -58,7 +58,7 @@ const FoodItem = ({ image, name, price, desc, id }) => {
             onClick={() => {
               addToCart(id);
               navigate("/cart");
-              window.scrollTo(0,0);
+              window.scrollTo(0, 0);
               setMenu("");
             }}
           >

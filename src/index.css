@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
 
+:root{
+  --primary-text-color:#ffffff;
+  --primary-background-color:#ffffff;
+   color: #ffffff;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -17,9 +23,13 @@ a {
   color: inherit;
 }
 
+.page{
+  background-color: rgb(13, 14, 13);
+}
 .app {
-  width: 80%;
+  width: 85%;
   margin: auto;
+  /* background-color: black; */
 }
 
 @keyframes fadeIn {

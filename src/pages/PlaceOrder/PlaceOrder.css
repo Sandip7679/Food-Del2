@@ -5,6 +5,8 @@
     gap: 50px;
     margin: 100px 0px;
     margin-top: 60px;
+    margin-bottom: 0px;
+    padding-bottom: 100px;
 }
 .place-order-left{
     width: 100%;
@@ -19,9 +21,10 @@
     margin-bottom: 15px;
     width: 100%;
     padding: 10px;
-    border: 1px solid #C5C5C5;
+    border: 0.5px solid #554e4e;
     border-radius: 4px;
-    outline-color: tomato;
+    background-color: #1b1b1b;
+    color: #faf4f2;
 }
 .place-order-left .multi-field{
     display: flex;
@@ -39,6 +42,9 @@
     padding: 12px 30px;
     border-radius: 4px;
     cursor: pointer;
+}
+.place-order-submit:hover{
+    box-shadow: 0px 0px 10px  rgba(255, 255, 255, 0.3);
 }
 .payment{
     display: flex;
@@ -61,7 +67,8 @@
     cursor: pointer;
 }
 .payment .payment-option:hover{
-    background-color:  #ffe7de;
+    background-color:  #141414;
+    box-shadow: 0px 0px 10px  rgba(255, 255, 255, 0.1);
 }
 
 @media (max-width:700px) {

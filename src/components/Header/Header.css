@@ -1,19 +1,37 @@
 .header{
-    height: 34vw;
-    margin: 30px auto;
-    background: url('/header_img.png') no-repeat;
+    height: 500px;
+    margin: 0px auto;
+    /* background: url('/header_img.png') no-repeat; */
     background-size:contain;
     position: relative;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.header img{
+    width: 90%;
+}
+.header-right{
+    /* flex: 1; */
+    display: flex;
+    /* width: 50%; */
+    /* align-items: center; */
+    justify-content: end;
 }
 .header-contents{
-    position: absolute;
+    /* flex: 1; */
+    /* position: absolute; */
     display: flex;
     flex-direction: column;
     align-items: start;
+    justify-content: center;
     gap: 1.5vw;
     max-width: 50%;
-    bottom: 10%;
-    left: 6vw;
+    /* height: 0vw; */
+    /* margin-top: 100px; */
+    /* left: 6vw; */
     animation: fadeIn 3s;
 }
 .header-contents h2{
@@ -22,34 +40,49 @@
     font-size: max(4.5vw,22px);
 }
 .header-contents p{
-    color: white;
-    font-size: 1vw;
+    color: rgb(202, 198, 198);
+    font-size: 1.2vw;
 }
 .header-contents a{
     border: none;
-    color: #747474;
+    color: #ffffff;
     font-weight: 500;
     padding: 1vw 2.3vw;
-    background: white;
+    /* background: #bb5808; */
+    background: #4d08bb;
     font-size: max(1vw,13px);
     border-radius: 50px;
+}
+.header-contents a:hover{
+    box-shadow: 0px 0px 10px  rgba(255, 255, 255, 0.3);
 }
 @media (max-width:1050px) {
     .header{
         height: 38vw;
     }
+    
     .header-contents{
-        max-width: 45%;
+        max-width: 80%;
+        /* position: absolute; */
     }
+    .header-contents p{
+        font-size: 1.5vw;
+    }
+    
 }
 @media(max-width:750px){
     .header-contents{
-        max-width: 55%;
+        max-width: 80%;
+        position: absolute;
     }
     .header-contents p{
-       display: none;
+        font-size: 2vw;
     }
     .header-contents button{
         padding: 2vw 4vw;
+    }
+    .header img{
+        opacity: 0.4;
+        width: 70%;
     }
 }

@@ -85,6 +85,10 @@ const LoginPopup = ({ setShowLogin }) => {
             required
           />
         </div>
+        <div className="login-popup-condition">
+          <input type="checkbox" name="" id="" required />
+          <p>By continuing, i agree to the terms of use & privacy policy.</p>
+        </div>
         <button disabled={isLoading}>
           {/* {isLoading ? (
             <span class="loader"></span>
@@ -93,13 +97,12 @@ const LoginPopup = ({ setShowLogin }) => {
               {currState === "Login" ? "Login" : "Create account"}
             </span>
           )} */}
-              {isLoading && <span class="loader"></span>}
-              <span class="button-text">{currState === "Login" ? "Login" : "Create account"} </span>
+          {isLoading && <span class="loader"></span>}
+          <span class="button-text">
+            {currState === "Login" ? "Login" : "Create account"}{" "}
+          </span>
         </button>
-        <div className="login-popup-condition">
-          <input type="checkbox" name="" id="" required />
-          <p>By continuing, i agree to the terms of use & privacy policy.</p>
-        </div>
+
         {currState === "Login" ? (
           <p>
             Create a new account?{" "}

@@ -16,6 +16,9 @@
     display: flex;
     justify-content: space-between;
 }
+.top-dishes h2,h3{
+    color: var(--primary-text-color);  
+}
 .view-all{
  text-decoration: underline;
  cursor: pointer;

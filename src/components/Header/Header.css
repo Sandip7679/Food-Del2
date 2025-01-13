@@ -52,6 +52,7 @@
     background: #4d08bb;
     font-size: max(1vw,13px);
     border-radius: 50px;
+    transition: box-shadow 0.2s ease;
 }
 .header-contents a:hover{
     box-shadow: 0px 0px 10px  rgba(255, 255, 255, 0.3);

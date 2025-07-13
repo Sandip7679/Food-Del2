@@ -57,5 +57,9 @@ const Cart = () => {
     </div>
   )
 }
+Cart.meta = {
+  title: 'Cart Page',
+  description: 'Review your selected items before proceeding to checkout.',
+};
 
 export default Cart

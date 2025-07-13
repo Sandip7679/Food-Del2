@@ -22,4 +22,9 @@ const Home = () => {
   );
 };
 
+Home.meta = {
+  title: 'Home Page',
+  description: 'Welcome to the home page of our site.',
+};
+
 export default Home;

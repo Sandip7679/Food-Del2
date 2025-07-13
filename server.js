@@ -1,47 +1,38 @@
-import express from "express";
-// import fs from "fs";
-// import path from 'path';
-import { createServer as createViteServer } from "vite";
+import express from 'express';
+import { createServer as createViteServer } from 'vite';
+import { readFile } from 'fs/promises';
+import path from 'path';
 
-async function createServer() {
-  const app = express();
+const app = express();
+const root = process.cwd();
+
+async function start() {
   const vite = await createViteServer({
-    server: { middlewareMode: "ssr" },
+    root,
+    server: { middlewareMode: 'ssr' },
   });
 
   app.use(vite.middlewares);
 
-//   app.use("/api", (req, res) => {
-//     proxy.web(req, res, { target: "http://localhost:5000" }); // or your API server
-//   });
-
-  // app.use("*", async (req, res) => {
+  // app.use('*', async (req, res) => {
   //   try {
-  //       //   const url = req.originalUrl;
-  //       console.log("Requested URL:", req?.originalUrl);
-  //   //   const url = req.originalUrl.split('?')[0]; // safest
-  //   //   const url = req.url || '/';
+  //     const url = req.originalUrl;
+  //     let template = await readFile(path.resolve('index.html'), 'utf-8');
+  //     template = await vite.transformIndexHtml(url, template);
 
-  //   const rawUrl = req.originalUrl?.split('?')[0] || '/';
-  //   const url = rawUrl.startsWith('/') ? rawUrl : '/';
+  //     const { render } = await vite.ssrLoadModule('/src/entry-server.jsx');
+  //     const { html } = await render();
 
-
-  //     const template = fs.readFileSync("index.html", "utf-8");
-  //     const { render } = await vite.ssrLoadModule("/src/entry-server.jsx");
-  //     const { appHtml, helmet } = await render(url);
-
-  //     const html = template
-  //       .replace("<!--helmet-title-->", helmet.title.toString())
-  //       .replace("<!--helmet-meta-->", helmet.meta.toString())
-  //       .replace("<!--app-html-->", appHtml);
-
-  //     res.status(200).set({ "Content-Type": "text/html" }).end(html);
+  //     const finalHtml = template.replace('<!--ssr-outlet-->', html);
+  //     res.status(200).set({ 'Content-Type': 'text/html' }).end(finalHtml);
   //   } catch (e) {
   //     vite.ssrFixStacktrace(e);
+  //     console.error(e);
   //     res.status(500).end(e.message);
   //   }
   // });
-  app.use(async (req, res, next) => {
+
+    app.use(async (req, res, next) => {
     const url = req.originalUrl;
 
     // Block malformed full URLs
@@ -71,12 +62,10 @@ async function createServer() {
     // Let other assets (CSS, JS, API) pass through
     next();
   });
-
   
-
   app.listen(3000, () => {
-    console.log("App running at http://localhost:3000");
+    console.log(' Dev server running at http://localhost:3000');
   });
 }
 
-createServer();
+start();
